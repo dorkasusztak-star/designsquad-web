@@ -1,0 +1,182 @@
+/* ==========================================================
+   Design Squad — TOKENS
+   Színek, betűk, alapbeállítások. Ha itt változik valami,
+   minden oldalon változik.
+   ========================================================== */
+
+/* ---------- Betűtípusok (a repo /fonts mappájából) ---------- */
+@font-face { font-family: 'DS Playfair';   font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/playfair-display-400.woff2') format('woff2'); }
+@font-face { font-family: 'DS Playfair';   font-style: italic; font-weight: 400; font-display: swap; src: url('../fonts/playfair-display-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'DS Montserrat'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/montserrat-400.woff2') format('woff2'); }
+@font-face { font-family: 'DS Montserrat'; font-style: normal; font-weight: 500; font-display: swap; src: url('../fonts/montserrat-500.woff2') format('woff2'); }
+@font-face { font-family: 'DS Montserrat'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/montserrat-600.woff2') format('woff2'); }
+
+/* ---------- Színek és betűcsaládok ---------- */
+.ds {
+  --sand: #d9bca3;
+  --blush: #d9c8bf;
+  --cream: #f2f0f0;
+  --grey: #737272;
+  --ink: #404040;
+  --bordeaux: #7a2e3b;
+  --merlot: #6b2737;
+  --on-bordeaux-soft: #f3dfd3;
+
+  --line: rgba(64,64,64,.18);
+  --line-strong: rgba(64,64,64,.45);
+
+  --serif: 'DS Playfair', 'Playfair Display', Georgia, serif;
+  --sans: 'DS Montserrat', 'Montserrat', Arial, sans-serif;
+}
+
+/* ---------- Alap ---------- */
+body { background: #f2f0f0; }
+
+.ds {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--cream);
+  padding: 0 24px 40px;
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+.ds *, .ds *::before, .ds *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.ds a { text-decoration: none; color: inherit; }
+
+/* Oszlopszélességek */
+.ds-wrap { position: relative; z-index: 1; margin: 0 auto; max-width: 420px; }
+.ds-wrap--wide { max-width: 1080px; }
+
+
+/* ==========================================================
+   Design Squad — KOMPONENSEK
+   Újrahasznosítható építőelemek. Minden osztály ds- előtagú.
+   ========================================================== */
+
+/* ---------- Nyitó függőleges vonal (mint a Reel covereken) ---------- */
+.ds-rule { width: 1px; height: 56px; margin: 0 auto; background: var(--ink); opacity: .45; }
+
+/* ---------- Szóvédjegy: DESIGN | SQUAD ---------- */
+.ds-wordmark {
+  text-align: center;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .42em; text-transform: uppercase;
+  color: var(--ink);
+  padding: 18px 0 28px;
+}
+.ds-wordmark span { color: var(--sand); padding: 0 .2em; }
+
+/* ---------- Boltíves portré horizontvonallal ---------- */
+.ds-portrait { position: relative; width: 148px; height: 188px; margin: 0 auto 36px; }
+.ds-portrait::after {
+  content: ""; position: absolute;
+  left: -44px; right: -44px; bottom: 0; height: 1px;
+  background: var(--ink); opacity: .45;
+}
+.ds-arch { position: relative; width: 148px; height: 188px; border-radius: 74px 74px 0 0; overflow: hidden; }
+.ds-arch img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ---------- Nagy címsor + bevezető ---------- */
+.ds .ds-hello {
+  text-align: center;
+  font-family: var(--serif); font-weight: 400;
+  font-size: 32px; line-height: 1.22;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.ds-hello em { font-style: italic; color: var(--bordeaux); }
+
+.ds-intro {
+  text-align: center;
+  font-size: 13px; line-height: 1.75;
+  color: var(--grey);
+  max-width: 320px; margin: 0 auto 14px;
+}
+
+/* ---------- Instagram handle ikonnal ---------- */
+.ds-handle {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: max-content; margin: 0 auto 40px;
+  font-size: 11px; font-weight: 500; letter-spacing: .18em;
+}
+.ds .ds-handle svg { width: 15px; height: 15px; flex: 0 0 auto; color: var(--bordeaux); }
+.ds-handle span { border-bottom: 1px solid rgba(122,46,59,.35); padding-bottom: 3px; transition: border-color .2s ease; }
+.ds-handle:hover span { border-color: var(--bordeaux); }
+
+/* ---------- Kiemelt bordó blokk (01) — ugyanaz a rács, mint a listában ---------- */
+.ds .ds-feature {
+  display: grid;
+  grid-template-columns: 34px 1fr 18px;
+  column-gap: 14px; row-gap: 18px;
+  margin: 0 -16px;
+  padding: 26px 16px 22px 18px;   /* 18px = 16px kifutás + a lista 2px-e → pontos igazítás */
+  background: var(--bordeaux);
+  color: #fff;
+  border-radius: 2px;
+  transition: background-color .25s ease;
+}
+.ds .ds-feature:hover { background: var(--merlot); }
+.ds-feature .ds-num { color: var(--sand); padding-top: 4px; }
+.ds-feature-body { grid-column: 2 / 4; }
+.ds-kicker {
+  display: block;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 8px;
+}
+.ds .ds-feature-title {
+  display: block;
+  font-family: var(--serif); font-weight: 400;
+  font-size: 23px; line-height: 1.28;
+  color: #fff;
+}
+.ds-feature-title em { font-style: italic; color: var(--on-bordeaux-soft); }
+.ds-feature-sub { display: block; margin-top: 8px; font-size: 12px; line-height: 1.55; color: rgba(255,255,255,.78); }
+.ds .ds-feature-cta {
+  grid-column: 2 / 4;
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 50px; padding: 0 18px;
+  background: var(--cream); color: var(--bordeaux);
+  font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+  border-radius: 2px;
+}
+.ds-feature-cta i { font-style: normal; font-size: 15px; transition: transform .25s ease; }
+.ds-feature:hover .ds-feature-cta i { transform: translateX(4px); }
+
+/* ---------- Számozott, szerkesztőségi lista ---------- */
+.ds-list { margin-top: 36px; border-top: 1px solid var(--line); }
+.ds-row {
+  display: grid;
+  grid-template-columns: 34px 1fr 18px;
+  align-items: center; column-gap: 14px;
+  padding: 20px 2px;
+  border-bottom: 1px solid var(--line);
+  transition: padding-left .25s ease;
+}
+.ds-row:hover { padding-left: 8px; }
+.ds-num { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--sand); transition: color .25s ease; }
+.ds-row:hover .ds-num { color: var(--bordeaux); }
+.ds-row-title { display: block; font-family: var(--serif); font-size: 19px; line-height: 1.3; color: var(--ink); }
+.ds-row-sub { display: block; margin-top: 4px; font-size: 12px; line-height: 1.5; color: var(--grey); }
+.ds-go { justify-self: end; font-size: 15px; color: var(--grey); transition: color .25s ease, transform .25s ease; }
+.ds-row:hover .ds-go { color: var(--bordeaux); transform: translateX(3px); }
+
+/* ---------- Kis címke (pl. SOON) ---------- */
+.ds-tag {
+  font-family: var(--sans); font-size: 9px; font-weight: 600;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--bordeaux);
+  border: 1px solid rgba(122,46,59,.4); border-radius: 999px;
+  padding: 2px 7px; margin-right: 6px; vertical-align: 1px;
+}
+
+/* ---------- Aláírás + lábléc ---------- */
+.ds-sign { text-align: center; margin-top: 40px; font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--bordeaux); }
+.ds-foot { text-align: center; margin-top: 18px; font-size: 10px; line-height: 1.9; letter-spacing: .04em; color: var(--grey); }
+.ds-foot a { border-bottom: 1px solid rgba(115,114,114,.4); }
+.ds-foot a:hover { color: var(--bordeaux); border-color: var(--bordeaux); }

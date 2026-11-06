@@ -1,0 +1,52 @@
+/* ==========================================================
+   Design Squad — TOKENS
+   Színek, betűk, alapbeállítások. Ha itt változik valami,
+   minden oldalon változik.
+   ========================================================== */
+
+/* ---------- Betűtípusok (a repo /fonts mappájából) ---------- */
+@font-face { font-family: 'DS Playfair';   font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/playfair-display-400.woff2') format('woff2'); }
+@font-face { font-family: 'DS Playfair';   font-style: italic; font-weight: 400; font-display: swap; src: url('../fonts/playfair-display-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'DS Montserrat'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/montserrat-400.woff2') format('woff2'); }
+@font-face { font-family: 'DS Montserrat'; font-style: normal; font-weight: 500; font-display: swap; src: url('../fonts/montserrat-500.woff2') format('woff2'); }
+@font-face { font-family: 'DS Montserrat'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/montserrat-600.woff2') format('woff2'); }
+
+/* ---------- Színek és betűcsaládok ---------- */
+.ds {
+  --sand: #d9bca3;
+  --blush: #d9c8bf;
+  --cream: #f2f0f0;
+  --grey: #737272;
+  --ink: #404040;
+  --bordeaux: #7a2e3b;
+  --merlot: #6b2737;
+  --on-bordeaux-soft: #f3dfd3;
+
+  --line: rgba(64,64,64,.18);
+  --line-strong: rgba(64,64,64,.45);
+
+  --serif: 'DS Playfair', 'Playfair Display', Georgia, serif;
+  --sans: 'DS Montserrat', 'Montserrat', Arial, sans-serif;
+}
+
+/* ---------- Alap ---------- */
+body { background: #f2f0f0; }
+
+.ds {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--cream);
+  padding: 0 24px 40px;
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+.ds *, .ds *::before, .ds *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.ds a { text-decoration: none; color: inherit; }
+
+/* Oszlopszélességek */
+.ds-wrap { position: relative; z-index: 1; margin: 0 auto; max-width: 420px; }
+.ds-wrap--wide { max-width: 1080px; }
