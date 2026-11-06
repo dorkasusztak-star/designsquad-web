@@ -13,7 +13,7 @@ A designsquad.space custom kódja. Az FEA Create marad a motor (formok, workflow
 - `tools/build.py` — ebből készül a `dist/` mappa
 
 `dist/ds.css` a közös design-fájl. Minden FEA oldal erre hivatkozik a jsDelivr linkjén:
-`https://cdn.jsdelivr.net/gh/<owner>/designsquad-web@main/dist/ds.css`
+`https://cdn.jsdelivr.net/gh/dorkasusztak-star/designsquad-web@main/dist/ds.css`
 
 `dist/fea/<oldal>.html` — ez másolható be az FEA Custom HTML elemébe.
 
@@ -43,6 +43,6 @@ A designsquad.space custom kódja. Az FEA Create marad a motor (formok, workflow
 1. Változtatás a `design/` vagy `pages/` fájlokban
 2. `python3 tools/build.py`
 3. Előnézet: `dist/preview/`
-4. Push → design-változás magától élesedik (jsDelivr cache ürítése: `https://purge.jsdelivr.net/gh/<owner>/designsquad-web@main/dist/ds.css`)
+4. Push → design-változás magától élesedik (jsDelivr cache ürítése: `https://purge.jsdelivr.net/gh/dorkasusztak-star/designsquad-web@main/dist/ds.css`)
 5. Ha az oldal tartalma változott: `dist/fea/<oldal>.html` bemásolása az FEA-ba
 6. Élő ellenőrzés + CHANGELOG
