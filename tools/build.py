@@ -38,6 +38,8 @@ for page in sorted((ROOT / "pages").rglob("*.html")):
     src = page.read_text(encoding="utf-8")
 
     fea = (f'<!-- Design Squad · {page.relative_to(ROOT).as_posix()} · build {datetime.date.today()} -->\n'
+           f'<link rel="preload" href="{CDN}/fonts/playfair-display-400.woff2" as="font" type="font/woff2" crossorigin>\n'
+           f'<link rel="preload" href="{CDN}/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin>\n'
            f'<link rel="stylesheet" href="{CDN}/dist/ds.css">\n'
            + render(src, f"{CDN}/images"))
     (DIST / "fea" / name).write_text(fea, encoding="utf-8")

@@ -21,7 +21,7 @@ A designsquad.space custom kódja. Az FEA Create marad a motor (formok, workflow
 
 | Fájl | FEA oldal | URL | Állapot | Utolsó módosítás |
 |---|---|---|---|---|
-| pages/links-page.html | Link In Bio Page – DesignSquad | /links-page | élesben (önálló kóddal), átállításra vár | 2026-11-06 |
+| pages/links-page.html | Link In Bio Page – DesignSquad | /links-page | közös rendszerre átállítva, bemásolásra vár (dist/fea/links-page.html) | 2026-11-06 |
 | pages/home.html | Home | /home | tervezett | — |
 | pages/about.html | About | /about | tervezett | — |
 | pages/services.html | Services | /services | tervezett | — |
